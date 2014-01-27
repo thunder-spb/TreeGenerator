@@ -1,3 +1,9 @@
+/*
+*
+* Low level class Drawer. Draw branchs and leafs.
+*
+*/
+
 var Drawer = function(canvasElement) {
 	this.c = canvasElement;
 
@@ -18,17 +24,17 @@ var Drawer = function(canvasElement) {
 		//Draw stick path
 		this.c.beginPath();
 		this.c.moveTo(x, y);
-		this.c.bezierCurveTo(x, y, x + leng / 2, y + deform, x + leng, y + w / 3);
-		this.c.lineTo(x + leng, y + w / 1.5 + w / 3);
-		this.c.bezierCurveTo(x + leng, y + w / 1.5 + w / 3, x + leng / 2, y + w + deform, x, y + w);
+		this.c.bezierCurveTo(x, y, x + leng / 2, y + deform, x + leng, y + (w-(w/BRANCH_CONSTRICTION))/2);
+		this.c.lineTo(x + leng, y + w / BRANCH_CONSTRICTION + (w-(w/BRANCH_CONSTRICTION))/2);
+		this.c.bezierCurveTo(x + leng, y + w / BRANCH_CONSTRICTION + (w-(w/BRANCH_CONSTRICTION))/2 , x + leng / 2, y + w + deform, x, y + w);
 		this.c.lineTo(x, y);
 		this.c.closePath();
 
 		//Draw arc on stick 
-		this.c.arc(x + leng, y + w / 3 + (w / 3), w / 3, 0 * Math.PI, 2 * Math.PI, false);
+		this.c.arc(x + leng, y + w / BRANCH_CONSTRICTION/2 + (w-(w/BRANCH_CONSTRICTION))/2, w/BRANCH_CONSTRICTION/2, 0 * Math.PI, 2 * Math.PI, false);
 
 		//Fill stick
-		this.c.fillStyle = '#333';
+		this.c.fillStyle = BRANCH_COLOR;
 		this.c.fill();
 
 		//Restore canvas 

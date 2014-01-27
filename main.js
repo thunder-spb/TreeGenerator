@@ -12,9 +12,11 @@ LEAF_DENSITY = 1.5;
 LEAF_TYPE = Math.ceil(rand(0, LeafMaps.length - 1));
 
 BRANCH_DEFORMATION = 30;
-BRANCE_MAXLENGTH = 200;
-BRANCE_MAXWIDTH = 70;
-BRANCE_OUTGROWTH = 4;
+BRANCH_MAXLENGTH = 200;
+BRANCH_MAXWIDTH = 70;
+BRANCH_OUTGROWTH = 4;
+BRANCH_CONSTRICTION = 1.5;
+BRANCH_COLOR = '#'+colorMaps[Math.ceil(rand(0,colorMaps.length-1))];
 
 OUTGROWTH_ISSHOWN = true;
 OUTGROWTH_BRANCH_WIDTH = 4;
@@ -63,9 +65,10 @@ function createConfigurations(){
 			LEAF_DENSITY:['Leaf density','i'],
 			
 			BRANCH_DEFORMATION:['Curvature of branches','i'],
-			BRANCE_MAXLENGTH:['Max length of branch','i'],
-			BRANCE_MAXWIDTH:['Max width of branch','i'],
-			BRANCE_OUTGROWTH:['Max count of branch outgrowth','i'],
+			BRANCH_MAXLENGTH:['Max length of branch','i'],
+			BRANCH_MAXWIDTH:['Max width of branch','i'],
+			BRANCH_OUTGROWTH:['Max count of branch outgrowth','i'],
+			BRANCH_CONSTRICTION:['Branch constriction to top','i'],
 
 			OUTGROWTH_ISSHOWN:['Show outgrowths','c'],
 			OUTGROWTH_BRANCH_WIDTH:['Maximal width of branch with outgrowths','i']
