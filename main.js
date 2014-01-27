@@ -42,6 +42,7 @@ function getConfiguartions(){
 	}
 
 	window.LEAF_TYPE = Math.ceil(rand(0, LeafMaps.length - 1));
+	window.BRANCH_COLOR = '#'+colorMaps[Math.ceil(rand(0,colorMaps.length-1))];
 	
 }
 
